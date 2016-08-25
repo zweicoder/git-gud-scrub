@@ -19,3 +19,8 @@ export function sortByDateDesc(pages) {
 export function parseDate(dateString){
   return moment(dateString,'DD-MM-YYYY HHmm');
 }
+
+export function isProperPage(page) {
+  // Check that it's a markdown file and not 404
+  return access(page, 'file.ext') === 'md' && !includes(page.path, '/404')
+}

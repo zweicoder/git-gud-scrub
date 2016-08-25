@@ -1,7 +1,8 @@
 import React from 'react'
 import Ideas from 'components/Ideas'
-import access from 'safe-access'
+import {isProperPage} from 'utils/helpers'
 
 export default function IdeasIndex(props) {
-  return <Ideas pages={access(props, 'route.pages')}/>
+  const pages = props.route.pages.filter(isProperPage);
+  return <Ideas pages={pages}/>
 }

@@ -16,6 +16,7 @@ export default function Thoughts(props) {
     sortByDateDesc,
     map((page)=> {
       const { title, body, date } = page.data;
+      console.log(page)
       return (
         <Card key={page.path}>
           <Link to={prefixLink(page.path)}><CardTitle title={title} subtitle={parseDate(date).calendar()}/></Link>

@@ -4,7 +4,7 @@ import { rhythm } from 'utils/typography';
 import { config } from 'config';
 import { parseDate } from 'utils/helpers';
 
-import '../css/zenburn.css'
+import './zenburn.css'
 
 class MarkdownWrapper extends React.Component {
   render() {
