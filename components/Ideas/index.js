@@ -13,7 +13,7 @@ import AnimatedCard from 'components/AnimatedCard';
 
 export default function Ideas(props) {
   const ideas = flow(
-    filter(pathIs('/ideas')),
+    filter(pathIs('/ideas/posts')),
     sortByDateDesc,
     map((page)=> {
       const { title, desc } = page.data;

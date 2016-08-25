@@ -6,9 +6,10 @@ import { rhythm, adjustFontSizeToMSValue } from 'utils/typography'
 import { config } from 'config'
 
 class Template extends React.Component {
-  render () {
+  render() {
     const { location, children } = this.props
-    let header
+    let header;
+
     if (location.pathname === prefixLink('/')) {
       header = (
         <h1
@@ -31,6 +32,9 @@ class Template extends React.Component {
         </h1>
       )
     } else {
+      const paths = location.pathname.split('/')
+        .filter(s => s.length > 0)
+        .map((path, key) => <span key={key} style={{ paddingLeft: rhythm(0.25) }}> &gt; {path} </span>);
       header = (
         <h3
           style={{
@@ -48,14 +52,17 @@ class Template extends React.Component {
           >
             {config.blogTitle}
           </Link>
+
+          {paths}
         </h3>
       )
     }
+
     return (
       <Container
         style={{
           maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3/4)}`,
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
         {header}
