@@ -28,8 +28,7 @@
     "remove-markdown": "^0.1.0",
     "safe-access": "^0.1.0",
     "typography": "^0.13.0",
-    "typography-theme-wordpress-2016": "^0.13.0",
-    "underscore.string": "^3.2.3"
+    "typography-theme-wordpress-2016": "^0.13.0"
   },
   "devDependencies": {
     "babel-core": "^6.13.2",
