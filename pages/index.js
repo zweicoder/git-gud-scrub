@@ -36,7 +36,7 @@ class BlogIndex extends React.Component {
         // );
 
         return (
-          <Card key={page.path}>test</Card>)
+          <Card key={page.path}>THIS IS A TEST CARD AND IT'S NOT WORKING T_T</Card>)
       })
     )(pages);
 
@@ -66,7 +66,7 @@ class BlogIndex extends React.Component {
           <div className={styles.card} key={page.path}>
             <span className={styles.cardTitle}><Link to={prefixLink(page.path)}> {title}</Link></span>
             <span className={styles.cardSubtitle}>{desc}</span>
-            <p>{truncate(body, {length: 200, omission:'[...]'})}</p>
+            <p>{truncate(removeHtmlTags(body), {length: 200, omission:'[...]'})}</p>
           </div>
 
         );
@@ -117,8 +117,8 @@ function pathIs(path) {
   return page => include(page.path, path)
 }
 
-function trunc(s, l){
-  return s.length > l? s.substr(0, l-1) + '[&hellip;]' : s;
+function removeHtmlTags(s) {
+  return s.replace(/<\/?[\w\d]+>/gm, '')
 }
 
 export default BlogIndex
